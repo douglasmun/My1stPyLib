@@ -1,0 +1,73 @@
+# **Run Logs**
+
+```shell
+douglasmun@Apollo19 ~ % echo $0
+-zsh
+
+douglasmun@Apollo19 ~ % cd /Users/douglasmun/Projects                      
+
+douglasmun@Apollo19 Projects % python3 -m venv My1stPyLib 
+
+douglasmun@Apollo19 Projects % source My1stPyLib/bin/activate
+
+((My1stPyLib) ) douglasmun@Apollo19 Projects % pip install setuptools
+Collecting setuptools
+  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Installing collected packages: setuptools
+Successfully installed setuptools-80.9.0
+
+[notice] A new release of pip is available: 25.1.1 -> 25.2
+[notice] To update, run: pip install --upgrade pip
+((My1stPyLib) ) douglasmun@Apollo19 Projects % cd My1stPyLib
+((My1stPyLib) ) douglasmun@Apollo19 My1stPyLib % python3 setup.py build
+running build
+running build_ext
+building 'my_c_module' extension
+creating build/temp.macosx-14.0-x86_64-cpython-312
+clang -fno-strict-overflow -Wsign-compare -Wunreachable-code -fno-common -dynamic -DNDEBUG -g -O3 -Wall -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -I/usr/local/opt/openjdk/include -I/Users/douglasmun/Projects/My1stPyLib/include -I/usr/local/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12 -c my_c_module.c -o build/temp.macosx-14.0-x86_64-cpython-312/my_c_module.o -I/Applications/Xcode.app/Contents/Developer/SDKs/MacOSX.sdk/usr/include
+creating build/lib.macosx-14.0-x86_64-cpython-312
+clang -bundle -undefined dynamic_lookup -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -I/usr/local/opt/openjdk/include build/temp.macosx-14.0-x86_64-cpython-312/my_c_module.o -o build/lib.macosx-14.0-x86_64-cpython-312/my_c_module.cpython-312-darwin.so
+
+
+((My1stPyLib) ) douglasmun@Apollo19 My1stPyLib % python3 setup.py install
+running install
+/Users/douglasmun/Projects/My1stPyLib/lib/python3.12/site-packages/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        By 2025-Oct-31, you need to update your project and remove deprecated calls
+        or your builds will no longer be supported.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running build
+running build_ext
+running install_lib
+copying build/lib.macosx-14.0-x86_64-cpython-312/my_c_module.cpython-312-darwin.so -> /Users/douglasmun/Projects/My1stPyLib/lib/python3.12/site-packages
+running install_egg_info
+running egg_info
+creating my_c_module.egg-info
+writing my_c_module.egg-info/PKG-INFO
+writing dependency_links to my_c_module.egg-info/dependency_links.txt
+writing top-level names to my_c_module.egg-info/top_level.txt
+writing manifest file 'my_c_module.egg-info/SOURCES.txt'
+reading manifest file 'my_c_module.egg-info/SOURCES.txt'
+writing manifest file 'my_c_module.egg-info/SOURCES.txt'
+Copying my_c_module.egg-info to /Users/douglasmun/Projects/My1stPyLib/lib/python3.12/site-packages/my_c_module-1.0-py3.12.egg-info
+running install_scripts
+
+((My1stPyLib) ) douglasmun@Apollo19 My1stPyLib % python3.12 test.py
+Module loaded successfully.
+The factorial of 10 is: 3628800
+
+((My1stPyLib) ) douglasmun@Apollo19 My1stPyLib % deactivate
+douglasmun@Apollo19 My1stPyLib % 
+```
